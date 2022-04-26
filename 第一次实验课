@@ -1,0 +1,48 @@
+x<-1/c(1:1000)                     #取1至1000的倒数
+atan(x)                            #求倒数的反正切值
+
+
+x<-c(1:1000)                       #numeric
+y<-atan(1/x)                       #x取倒数求反正切并赋给y
+dx<-deriv(y~atan(1/x),"x");dx      #生成求导公式
+mode(dx)                           #判断dx类型                
+z<-1/eval(dx)                      #赋值给z
+
+x==z
+identical(x,z)
+all.equal(x,z)
+
+
+
+true_and_missing<-c(TRUE,NA)       #定义向量
+false_and_missing<-c(FALSE,NA)     #同上
+mixed<-c(TRUE,FALSE,NA)            #同上
+  
+any(true_and_missing)
+any(false_and_missing)
+any(mixed)
+all(true_and_missing)
+all(false_and_missing)
+all(mixed)
+
+
+
+a<-sample(50:1000,100,TRUE,NULL)    #随机生成整数
+sum(a)
+median(a)
+mean(a)
+sd(a)
+
+
+
+d<-atan(1000)                       #圆的直径
+r<-d/2                              #圆的半径
+S<-pi*r^2                           #圆的面积
+ 
+
+
+x2<-2                               #此四行为x1,x2,y1,y2的值
+y2<-3
+x1<-13
+y1<-22
+EM<-sqrt((x2-x1)^2+(y2-y1)^2)       #EM为欧氏距离
